@@ -12,9 +12,10 @@ public class firstClass {
         //System.out.println("UITS id : " + uitsID);
         //System.out.println("Bachelors CGPA : " + cgpa);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        String name = sc.nextLine();
-        System.out.println("Hi " + name + ", Welcome to VS Code.");
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter your name: ");
+            String name = sc.nextLine();
+            System.out.println("Hi " + name + ", Welcome to VS Code.");
+        }
     }
 }
