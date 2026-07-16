@@ -28,13 +28,22 @@ public class PaymentSystem {
         System.out.println("What is your full name, Sire?");
 
         String userName = sc.nextLine();
+        double CC = 12000.43, paypal = 45000, bkash = 1400.98;
+        
         payment p1 = new CreditCard();
         payment p2 = new PayPal();
         payment p3 = new Bkash();
 
-        p1.pay(userName, 1345.65);
-        p2.pay(userName, 21.65);
-        p3.pay(userName, 345.65);
+        while (true) {
+            System.out.println("Hi, "+userName+"\nDo you want to pay, Sire?");
+            if(sc.next() == "y"){
+                System.out.println("Okay");
+            }else{
+                break;
+            }
+        }
+
+        
              
 
         sc.close();
