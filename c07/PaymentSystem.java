@@ -36,15 +36,28 @@ public class PaymentSystem {
 
         while (true) {
             System.out.println("Hi, "+userName+"\nDo you want to pay, Sire?");
-            if(sc.next() == "y"){
-                System.out.println("Okay");
+            Boolean uInp = sc.nextBoolean();
+            if(uInp){
+                System.out.println("Pay Via : \n1. Credit Card\n2. PayPal\n3. Bkash");
+                int uINP = sc.nextInt();
+                switch (uINP) {
+                    case 1:
+                        p1.pay(userName, CC);
+                        break;
+                    case 2:
+                        p2.pay(userName, paypal);
+                        break;
+                    case 3:
+                        p3.pay(userName, bkash);
+                        break;
+                    default:
+                        System.out.println("Wrong Input. Try again.");
+                        continue;
+                }
             }else{
                 break;
             }
         }
-
-        
-             
 
         sc.close();
     }
