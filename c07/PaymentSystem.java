@@ -1,29 +1,41 @@
 import java.util.*;
 
 interface payment{
-    public void pay(String item, double amount);
+    public void pay(String item, double amount) throws InterruptedException;
 }
 
 class CreditCard implements payment{
-    public void pay(String item, double amount){
-        System.out.println("Hi, Sire - "+ item + "!!\n"+"Payment "+amount+" has completed.");
+    public void pay(String item, double amount) throws InterruptedException{
+        for (int i = 0; i<5; i++){
+            System.out.print(". ");
+            Thread.sleep(1000);
+        }
+        System.out.println("Thank You, Sire - "+ item + "!!\n"+"Balance :: "+amount);
     }
 }
 
 class PayPal implements payment{
-    public void pay(String item, double amount){
-        System.out.println("Hi, Sire - "+ item + "!!\n"+"Payment "+amount+" has completed.");
+    public void pay(String item, double amount) throws InterruptedException{
+        for (int i = 0; i<5; i++){
+            System.out.print(". ");
+            Thread.sleep(1000);
+        }
+        System.out.println("Thank You, Sire - "+ item + "!!\n"+"Balance :: "+amount);
     }
 }
 
 class Bkash implements payment{
-    public void pay(String item, double amount){
-        System.out.println("Hi, Sire - "+ item + "!!\n"+"Payment "+amount+" has completed.");
+    public void pay(String item, double amount) throws InterruptedException{
+        for (int i = 0; i<5; i++){
+            System.out.print(". ");
+            Thread.sleep(1000);
+        }
+        System.out.println("Thank You, Sire - "+ item + "!!\n"+"Balance :: "+amount);
     }
 }
 
 public class PaymentSystem {
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException{
         Scanner sc = new Scanner(System.in);
         System.out.println("What is your full name, Sire?");
 
@@ -35,14 +47,14 @@ public class PaymentSystem {
         payment p3 = new Bkash();
 
         while (true) {
-            System.out.println("Hi, "+userName+"\nDo you want to pay, Sire?");
-            Boolean uInp = sc.nextBoolean();
-            if(uInp){
+            System.out.println("Hi, "+userName+"\nDo you want to pay, Sire? (True/False)");
+            //Boolean uInp = sc.nextBoolean();
+            if(sc.nextBoolean()){
                 System.out.println("Pay Via : \n1. Credit Card\n2. PayPal\n3. Bkash");
                 int uINP = sc.nextInt();
                 switch (uINP) {
                     case 1:
-                        p1.pay(userName, CC);
+                        p1.pay(userName, CC) ;
                         break;
                     case 2:
                         p2.pay(userName, paypal);
