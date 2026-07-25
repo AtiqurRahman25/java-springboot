@@ -54,7 +54,7 @@ public class PaymentSystem {
                 int uINP = sc.nextInt();
                 switch (uINP) {
                     case 1:
-                        p1.pay(userName, CC) ;
+                        p1.pay(userName, CC);
                         break;
                     case 2:
                         p2.pay(userName, paypal);
