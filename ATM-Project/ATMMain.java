@@ -11,11 +11,11 @@ public class ATMMain {
     public static void main(String[] args) {
 
         System.out.println("================================");
-        System.out.println("         WELCOME TO ATM");
+        System.out.println("         WELCOME TO XYZ ATM");
         System.out.println("================================");
 
         if (!authenticateUser()) {
-            System.out.println("Too many incorrect attempts.");
+            System.out.println("Too many incorrect attempts. Contact Administration ASAP.");
             System.out.println("Your account has been temporarily locked.");
             scanner.close();
             return;
