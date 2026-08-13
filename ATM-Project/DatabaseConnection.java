@@ -11,7 +11,7 @@ public class DatabaseConnection {
             "root";
 
     private static final String PASSWORD =
-            "YOUR_MYSQL_PASSWORD";
+            "$!faT1205581908";
 
     public static Connection getConnection() throws SQLException {
 
